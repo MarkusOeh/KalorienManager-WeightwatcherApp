@@ -10,7 +10,10 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void tagesVerlauf()
         {
+
+            Console.Clear();
             Console.WriteLine("-----TAGESVERLAUF-----");
+            
         }
     }
 }

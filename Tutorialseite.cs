@@ -10,6 +10,8 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void tutorialSeite()
         {
+            Console.Clear();
+            Console.WriteLine("\n\t-----TUTORIALSEITE-----\n");
             Console.WriteLine("Willkommen zur WeightWatchers App - Dein Kalorien Manager zum Abnehmen!");
             Console.WriteLine("");
             Console.WriteLine("Du willst Gewicht verlieren? Dann ist diese App genau das Richtige für dich! \nMit dem Kalorien Manager kannst du dein Ziel erreichen, indem du deine Ernährung genau im Blick behältst und Schritt für Schritt abnimmst. Folge den Anweisungen und du wirst erfolgreich sein.");

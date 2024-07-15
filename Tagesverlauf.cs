@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace KalorienManager_WeightwatcherApp
 {
-    internal class Tagesverlauf
+    public class Tagesverlauf
     {
+        public void tagesVerlauf()
+        {
+            Console.WriteLine("testy");
+        }
     }
 }

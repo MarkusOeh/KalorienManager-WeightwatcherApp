@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace KalorienManager_WeightwatcherApp
 {
-    internal class Vorlagenseite
+    public class Vorlagenseite
     {
+        public void vorlagenSeite()
+        {
+            Console.WriteLine("test");
+        }
     }
 }

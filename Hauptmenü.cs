@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace KalorienManager_WeightwatcherApp
 {
-    internal class Hauptmenü
+    public class Hauptmenü
     {
+        public void hauptmenü()
+        {
+            Console.WriteLine("HAUPTMENÜ");
+            Console.WriteLine("");
+            Console.WriteLine("TAGESVERLAUF");
+            Console.WriteLine("VORLAGENSEITE");
+            Console.WriteLine("GESAMTVERLAUF");
+            Console.WriteLine("KALENDERWOCHEN");
+            Console.WriteLine("TUTORIAL");
+        }
     }
 }

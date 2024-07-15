@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace KalorienManager_WeightwatcherApp
 {
-    internal class Kalenderwochen
+    public class Kalenderwochen
     {
+        public void kalenderWochen() 
+        {
+            Console.WriteLine("testus");
+        }
     }
 }

@@ -10,8 +10,11 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void welcomeScreen()
         {
-            Console.WriteLine("Willkommen bei KalorienManager App");
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("\tWillkommen bei KalorienManager App");
             Console.ReadKey();
+            
         }
     }
 }

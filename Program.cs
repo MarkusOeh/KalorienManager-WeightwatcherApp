@@ -11,6 +11,14 @@
             Vorlagenseite vorlagenseite = new Vorlagenseite();
             Kalenderwochen kalenderwochen = new Kalenderwochen();
             Gesamtverlauf gesamtverlauf = new Gesamtverlauf();
+            LimitFestlegen limitfestlegen = new LimitFestlegen();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            welcome.welcomeScreen();
+            hauptmenü.hauptMenü();
+            limitfestlegen.limitFestlegen();
+            hauptmenü.hauptMenü();
+            Console.ReadKey();
 
         }
     }

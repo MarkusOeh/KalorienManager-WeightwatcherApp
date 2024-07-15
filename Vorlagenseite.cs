@@ -10,7 +10,8 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void vorlagenSeite()
         {
-            Console.WriteLine("test");
+            Console.WriteLine("-----VORLAGEN-----");
+            Console.ReadKey();
         }
     }
 }

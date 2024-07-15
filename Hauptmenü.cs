@@ -8,15 +8,19 @@ namespace KalorienManager_WeightwatcherApp
 {
     public class Hauptmenü
     {
-        public void hauptmenü()
+        public void hauptMenü()
         {
-            Console.WriteLine("HAUPTMENÜ");
+            Console.Clear();
             Console.WriteLine("");
-            Console.WriteLine("TAGESVERLAUF");
-            Console.WriteLine("VORLAGENSEITE");
-            Console.WriteLine("GESAMTVERLAUF");
-            Console.WriteLine("KALENDERWOCHEN");
-            Console.WriteLine("TUTORIAL");
+            Console.WriteLine("\t-----HAUPTMENÜ-----");
+            Console.WriteLine("");
+            Console.WriteLine("\tTAGESVERLAUF");
+            Console.WriteLine("\tVORLAGENSEITE");
+            Console.WriteLine("\tGESAMTVERLAUF");
+            Console.WriteLine("\tKALENDERWOCHEN");
+            Console.WriteLine("\tTUTORIAL");
+            Console.WriteLine("\n\tLIMIT FESTLEGEN");
+            Console.ReadKey();
         }
     }
 }

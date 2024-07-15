@@ -10,7 +10,8 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void gesamtVerlauf() 
         {
-            Console.WriteLine("verlauf");
+            Console.WriteLine("-----GESAMTVERLAUF-----");
+            Console.ReadKey();
         }
     }
 }

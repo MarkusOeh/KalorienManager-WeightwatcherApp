@@ -10,7 +10,8 @@ namespace KalorienManager_WeightwatcherApp
     {
         public void kalenderWochen() 
         {
-            Console.WriteLine("testus");
+            Console.WriteLine("-----KALENDERWOCHEN-----");
+            Console.ReadKey();
         }
     }
 }

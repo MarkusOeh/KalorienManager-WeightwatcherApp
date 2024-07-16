@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            WelcomeScreen welcome = new WelcomeScreen();
             Console.ForegroundColor = ConsoleColor.Green;
-            welcome.welcomeScreen();
+
+            Console.WriteLine("\t\nWillkommen bei KalorienManager App");
+            Console.ReadKey();
+
             HauptMenü();
 
 

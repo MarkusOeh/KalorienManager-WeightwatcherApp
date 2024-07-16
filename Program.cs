@@ -9,6 +9,7 @@
             welcome.welcomeScreen();
             HauptMenü();
 
+
             //-----------------------HAUPTMENÜ-----------------------
             static void HauptMenü()
             {
@@ -32,7 +33,7 @@
                             TagesVerlauf();
                             break;
                         case "v":
-                            VorlagenSeite();
+                            VorlagenListe();
                             break;
                         case "g":
                             GesamtVerlauf();
@@ -54,6 +55,21 @@
             }
             //-----------------------HAUPTMENÜ-----------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //-----------------------TAGESVERLAUF-----------------------
             static void TagesVerlauf()
             {
@@ -70,6 +86,7 @@
                     Console.WriteLine("\t (N)EUER EINTRAG");
                     Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
                     Console.WriteLine("\t (Z)U VORLAGENLISTE SPRINGEN");
+                    Console.WriteLine("\t (H)AUPTMENÜ");
 
                     string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -84,6 +101,9 @@
                         case "z":
                             ZuVorlagenListeSpringen();
                             break;
+                        case "h":
+                            HauptMenü();
+                            break;
                         default:
                             Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
                             break;
@@ -93,35 +113,68 @@
             static void NeuerEintragTagesverlauf()
             {
                 Console.Clear();
-                Console.WriteLine("TEST BESTANDEN");
+                Console.WriteLine("TEST NEUER EINTRAG BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
                 Console.ReadKey();
                 HauptMenü();
             }
+            static void LetztenEintragLöschen()
+            {
+                Console.Clear();
+                Console.WriteLine("TEST EINTRAG LÖSCHEN BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
+                Console.ReadKey();
+                HauptMenü();
+            }
+            static void ZuVorlagenListeSpringen()
+            {
+                Console.Clear();
+                Console.WriteLine("TEST VORLAGENLISTE BESTANDEN. JETZT ZU VORLAGEN SPRINGEN");
+                Console.ReadKey();
+                VorlagenListe();
+            }
             //-----------------------TAGESVERLAUF-----------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //-----------------------VORLAGENSEITE-----------------------
-            static void VorLage()
+            static void VorlagenListe()
             {
                 while (true)
                 {
                     Console.Clear();
                     Console.WriteLine("-----VORLAGEN-----");
-                    Console.WriteLine("\t (N)EUES GERICHT EINTRAGEN");
+                    Console.WriteLine("\t (N)EUE VORLAGE EINTRAGEN");
                     Console.WriteLine("\t (E)INTRAG LÖSCHEN");
                     Console.WriteLine("\t (Z)U TAGESLISTE SPRINGEN");
+                    Console.WriteLine("\t (H)AUPTMENÜ");
 
                     string auswahl = Console.ReadLine().ToLower().Trim();
 
                     switch (auswahl)
                     {
                         case "n":
-                            BlaBla1();
+                            NeueVorlageEintragen();
                             break;
                         case "l":
-                            BlaBla2();
+                            EintragLöschen();
                             break;
                         case "z":
-                            BlaBla3();
+                            TagesVerlauf();
+                            break;
+                        case "h":
+                            HauptMenü();
                             break;
                         default:
                             Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
@@ -129,107 +182,95 @@
                     }
                 }
             }
-            static void BlaBla11()
+            static void NeueVorlageEintragen()
             {
                 Console.Clear();
-                Console.WriteLine("TEST BESTANDEN");
+                Console.WriteLine("TEST NeueVorlageEintragen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
                 Console.ReadKey();
-                HauptMenü();
+                VorlagenListe();
+            }
+            static void EintragLöschen()
+            {
+                Console.Clear();
+                Console.WriteLine("TEST EintragLöschen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
+                Console.ReadKey();
+                VorlagenListe();
             }
             //-----------------------VORLAGENSEITE-----------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //-----------------------GESAMTVERLAUF-----------------------
-            static void Gesamtverlauf()
+            static void GesamtVerlauf()
             {
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("\t-----TAGESVERLAUF-----\n");
-                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL");
-                    Console.WriteLine("\t 200g\t\tTesteintrag\t\t500");
-                    Console.WriteLine("\t 1Stk\t\tTestkuchen\t\t600");
-                    Console.WriteLine("\t 1 Portion\t\tTestessen\t\t1000");
-                    Console.WriteLine("\n\n\t SUMME: XXX KALORIEN");
-                    Console.WriteLine("\n\t DU DARFST NOCH SUMME minus TAGESLIMIT KONSUMIEREN\n\n");
-                    Console.WriteLine("\t (N)EUER EINTRAG");
-                    Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
-                    Console.WriteLine("\t (Z)U VORLAGENLISTE SPRINGEN");
-
-                    string auswahl = Console.ReadLine().ToLower().Trim();
-
-                    switch (auswahl)
-                    {
-                        case "n":
-                            BlaBla1();
-                            break;
-                        case "l":
-                            BlaBla2();
-                            break;
-                        case "z":
-                            BlaBla3();
-                            break;
-                        default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
-                            break;
-                    }
+                    Console.WriteLine("\t-----GESAMTVERLAUF TESTSEITE-----\n");
+                    Console.ReadKey();
+                    HauptMenü();
                 }
-            }
-            static void BlaBla11()
-            {
-                Console.Clear();
-                Console.WriteLine("TEST BESTANDEN");
-                Console.ReadKey();
-                HauptMenü();
             }
             //-----------------------GESAMTVERLAUF-----------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //-----------------------KALENDERWOCHEN-----------------------
-            static void Kalenderwochen()
+            static void KalenderWochen()
             {
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("\t-----TAGESVERLAUF-----\n");
-                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL");
-                    Console.WriteLine("\t 200g\t\tTesteintrag\t\t500");
-                    Console.WriteLine("\t 1Stk\t\tTestkuchen\t\t600");
-                    Console.WriteLine("\t 1 Portion\t\tTestessen\t\t1000");
-                    Console.WriteLine("\n\n\t SUMME: XXX KALORIEN");
-                    Console.WriteLine("\n\t DU DARFST NOCH SUMME minus TAGESLIMIT KONSUMIEREN\n\n");
-                    Console.WriteLine("\t (N)EUER EINTRAG");
-                    Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
-                    Console.WriteLine("\t (Z)U VORLAGENLISTE SPRINGEN");
-
-                    string auswahl = Console.ReadLine().ToLower().Trim();
-
-                    switch (auswahl)
-                    {
-                        case "n":
-                            BlaBla1();
-                            break;
-                        case "l":
-                            BlaBla2();
-                            break;
-                        case "z":
-                            BlaBla3();
-                            break;
-                        default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
-                            break;
-                    }
+                    Console.WriteLine("\tKALENDERWOCHEN TESTSEITE");
+                    Console.ReadKey();
+                    HauptMenü();
                 }
             }
-            static void BlaBla11()
-            {
-                Console.Clear();
-                Console.WriteLine("TEST BESTANDEN");
-                Console.ReadKey();
-                HauptMenü();
-            }
             //-----------------------KALENDERWOCHEN-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             //-----------------------TUTORIAL-----------------------
-            static void Tutorial()
+            static void TutorialSeite()
             {
                 while (true)
                 {
@@ -255,34 +296,32 @@
                     Console.WriteLine("Mit der KalorienManager/WeightWatcher App hast du ein mächtiges Werkzeug an deiner Seite, das dir hilft, deine Ziele zu erreichen. Starte noch heute und mach den ersten Schritt zu einem gesünderen und glücklicheren Leben!");
                     Console.WriteLine("");
 
-                    string auswahl = Console.ReadLine().ToLower().Trim();
-
-                    switch (auswahl)
-                    {
-                        case "n":
-                            BlaBla1();
-                            break;
-                        case "l":
-                            BlaBla2();
-                            break;
-                        case "z":
-                            BlaBla3();
-                            break;
-                        default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
-                            break;
-                    }
+                    Console.WriteLine("DRÜCKE EINE TASTE ZURÜCK ZUM HAUPTMENÜ");
+                    Console.ReadKey();
+                    HauptMenü();
                 }
             }
-            static void BlaBla11()
-            {
-                Console.Clear();
-                Console.WriteLine("TEST BESTANDEN");
-                Console.ReadKey();
-                HauptMenü();
-            }
-
             //-----------------------TUTORIAL-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             //-----------------------LIMIT FESTLEGEN-----------------------
             static void LimitFestlegen()
@@ -308,10 +347,6 @@
 
             }
             //-----------------------LIMIT FESTLEGEN-----------------------
-
-
-
-
 
         }
     }

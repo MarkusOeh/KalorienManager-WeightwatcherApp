@@ -4,13 +4,28 @@
     {
         static void Main(string[] args)
         {
-            WelcomeScreen welcome = new WelcomeScreen(); // aufrufen mit: welcome.welcomeScreen()
+            WelcomeScreen welcome = new WelcomeScreen();
             Console.ForegroundColor = ConsoleColor.Green;
             welcome.welcomeScreen();
             HauptMenü();
 
 
-            //-----------------------HAUPTMENÜ-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //________________________HAUPTMENÜ________________________
             static void HauptMenü()
             {
                 while (true)
@@ -53,7 +68,7 @@
                     }
                 }
             }
-            //-----------------------HAUPTMENÜ-----------------------
+            //***********************HAUPTMENÜ ENDE***********************
 
 
 
@@ -70,7 +85,7 @@
 
 
 
-            //-----------------------TAGESVERLAUF-----------------------
+            //________________________TAGESVERLAUF________________________
             static void TagesVerlauf()
             {
                 while (true)
@@ -131,7 +146,7 @@
                 Console.ReadKey();
                 VorlagenListe();
             }
-            //-----------------------TAGESVERLAUF-----------------------
+            //***********************TAGESVERLAUF ENDE***********************
 
 
 
@@ -148,7 +163,7 @@
 
 
 
-            //-----------------------VORLAGENSEITE-----------------------
+            //________________________VORLAGENSEITE________________________
             static void VorlagenListe()
             {
                 while (true)
@@ -196,7 +211,7 @@
                 Console.ReadKey();
                 VorlagenListe();
             }
-            //-----------------------VORLAGENSEITE-----------------------
+            //***********************VORLAGENSEITE ENDE***********************
 
 
 
@@ -213,7 +228,7 @@
 
 
 
-            //-----------------------GESAMTVERLAUF-----------------------
+            //________________________GESAMTVERLAUF________________________
             static void GesamtVerlauf()
             {
                 while (true)
@@ -224,7 +239,7 @@
                     HauptMenü();
                 }
             }
-            //-----------------------GESAMTVERLAUF-----------------------
+            //***********************GESAMTVERLAUF ENDE***********************
 
 
 
@@ -241,7 +256,7 @@
 
 
 
-            //-----------------------KALENDERWOCHEN-----------------------
+            //________________________KALENDERWOCHEN________________________
             static void KalenderWochen()
             {
                 while (true)
@@ -252,7 +267,7 @@
                     HauptMenü();
                 }
             }
-            //-----------------------KALENDERWOCHEN-----------------------
+            //***********************KALENDERWOCHEN ENDE***********************
 
 
 
@@ -269,7 +284,7 @@
 
 
 
-            //-----------------------TUTORIAL-----------------------
+            //________________________TUTORIAL________________________
             static void TutorialSeite()
             {
                 while (true)
@@ -301,7 +316,7 @@
                     HauptMenü();
                 }
             }
-            //-----------------------TUTORIAL-----------------------
+            //***********************TUTORIAL ENDE***********************
 
 
 
@@ -323,7 +338,7 @@
 
 
 
-            //-----------------------LIMIT FESTLEGEN-----------------------
+            //________________________LIMIT FESTLEGEN________________________
             static void LimitFestlegen()
             {
                 double tageslimit;
@@ -346,7 +361,7 @@
                 }
 
             }
-            //-----------------------LIMIT FESTLEGEN-----------------------
+            //***********************LIMIT FESTLEGEN ENDE***********************
 
         }
     }

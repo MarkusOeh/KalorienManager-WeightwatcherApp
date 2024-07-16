@@ -31,14 +31,12 @@
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("");
-                    Console.WriteLine("\t-----HAUPTMENÜ-----");
-                    Console.WriteLine("");
-                    Console.WriteLine("\t(T)AGESVERLAUF");
-                    Console.WriteLine("\t(V)ORLAGENSEITE");
-                    Console.WriteLine("\t(G)ESAMTVERLAUF");
-                    Console.WriteLine("\t(K)ALENDERWOCHEN");
-                    Console.WriteLine("\tT(U)TORIAL");
+                    Console.WriteLine("\n\t-----HAUPTMENÜ-----\n\n");
+                    Console.WriteLine("\t(T)AGESVERLAUF\n");
+                    Console.WriteLine("\t(V)ORLAGENSEITE\n");
+                    Console.WriteLine("\t(G)ESAMTVERLAUF\n");
+                    Console.WriteLine("\t(K)ALENDERWOCHEN\n");
+                    Console.WriteLine("\tT(U)TORIAL\n");
                     Console.WriteLine("\n\t(L)IMIT FESTLEGEN");
                     string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -63,7 +61,7 @@
                             LimitFestlegen();
                             break;
                         default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
+                            Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                             break;
                     }
                 }
@@ -120,7 +118,7 @@
                             HauptMenü();
                             break;
                         default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
+                            Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                             break;
                     }
                 }
@@ -128,21 +126,21 @@
             static void NeuerEintragTagesverlauf()
             {
                 Console.Clear();
-                Console.WriteLine("TEST NEUER EINTRAG BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
+                Console.WriteLine("\n\tTEST NEUER EINTRAG BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
                 Console.ReadKey();
                 HauptMenü();
             }
             static void LetztenEintragLöschen()
             {
                 Console.Clear();
-                Console.WriteLine("TEST EINTRAG LÖSCHEN BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
+                Console.WriteLine("\n\tTEST EINTRAG LÖSCHEN BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
                 Console.ReadKey();
                 HauptMenü();
             }
             static void ZuVorlagenListeSpringen()
             {
                 Console.Clear();
-                Console.WriteLine("TEST VORLAGENLISTE BESTANDEN. JETZT ZU VORLAGEN SPRINGEN");
+                Console.WriteLine("\n\tTEST VORLAGENLISTE BESTANDEN. JETZT ZU VORLAGEN SPRINGEN");
                 Console.ReadKey();
                 VorlagenListe();
             }
@@ -169,7 +167,7 @@
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("-----VORLAGEN-----");
+                    Console.WriteLine("\n\t-----VORLAGEN-----");
                     Console.WriteLine("\t (N)EUE VORLAGE EINTRAGEN");
                     Console.WriteLine("\t (E)INTRAG LÖSCHEN");
                     Console.WriteLine("\t (Z)U TAGESLISTE SPRINGEN");
@@ -192,7 +190,7 @@
                             HauptMenü();
                             break;
                         default:
-                            Console.WriteLine("Ungültige Auswahl. Bitte erneut versuchen.");
+                            Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                             break;
                     }
                 }
@@ -200,14 +198,14 @@
             static void NeueVorlageEintragen()
             {
                 Console.Clear();
-                Console.WriteLine("TEST NeueVorlageEintragen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
+                Console.WriteLine("\n\tTEST NeueVorlageEintragen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
                 Console.ReadKey();
                 VorlagenListe();
             }
             static void EintragLöschen()
             {
                 Console.Clear();
-                Console.WriteLine("TEST EintragLöschen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
+                Console.WriteLine("\n\tTEST EintragLöschen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
                 Console.ReadKey();
                 VorlagenListe();
             }
@@ -234,7 +232,7 @@
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("\t-----GESAMTVERLAUF TESTSEITE-----\n");
+                    Console.WriteLine("\n\t-----GESAMTVERLAUF TESTSEITE-----\n");
                     Console.ReadKey();
                     HauptMenü();
                 }
@@ -262,7 +260,7 @@
                 while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("\tKALENDERWOCHEN TESTSEITE");
+                    Console.WriteLine("\n\tKALENDERWOCHEN TESTSEITE");
                     Console.ReadKey();
                     HauptMenü();
                 }
@@ -344,19 +342,20 @@
                 double tageslimit;
                 while (true)
                 {
-                    Console.WriteLine("Wie viele Kalorien soll dein Tageslimit sein?");
+                    Console.Clear();
+                    Console.WriteLine("\n\tWie viele Kalorien soll dein Tageslimit sein?");
                     string input = Console.ReadLine();
 
                     if (double.TryParse(input, out tageslimit))
                     {
-                        Console.WriteLine($"Dein Tageslimit an Kalorien ist: {tageslimit}");
+                        Console.WriteLine($"\n\tDein Tageslimit an Kalorien ist: {tageslimit}");
                         Console.ReadKey();
                         HauptMenü();
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Ungültige Eingabe. Bitte gib eine gültige Zahl ein.\n");
+                        Console.WriteLine("\n\tUngültige Eingabe. Bitte gib eine gültige Zahl ein.\n");
                     }
                 }
 

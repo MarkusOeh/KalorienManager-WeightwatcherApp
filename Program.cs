@@ -104,7 +104,11 @@ namespace KalorienManager_WeightwatcherApp
                 {
                     Console.Clear();
                     Console.WriteLine("\t-----TAGESVERLAUF-----\n");
-                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n\n");
+                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n");
+                    foreach (Tagesliste item in heute)
+                    {
+                        Console.WriteLine($"\t{item.Menge}\t {item.Gericht}\t{item.Kcal}");
+                    }
                     Console.WriteLine("\n\n\t SUMME: n KALORIEN");
                     Console.WriteLine("\n\t DU DARFST NOCH n KCAL KONSUMIEREN\n\n");
                     Console.WriteLine("\t (N)EUER EINTRAG");

@@ -61,7 +61,6 @@
                 Console.WriteLine("\t(G)ESAMTVERLAUF\n");
                 Console.WriteLine("\t(K)ALENDERWOCHEN\n");
                 Console.WriteLine("\tT(U)TORIAL\n");
-                Console.WriteLine("\n\t(L)IMIT FESTLEGEN");
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
                 switch (auswahl)
@@ -81,9 +80,6 @@
                     case "u":
                         TutorialSeite();
                         break;
-                    case "l":
-                        LimitFestlegen();
-                        break;
                     default:
                         Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                         break;
@@ -101,23 +97,26 @@
                 Console.Clear();
                 Console.WriteLine("\t-----TAGESVERLAUF-----\n");
                 double summeKcal = 0;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (TagesListe item in tagesListe)
                 {
-                    Console.WriteLine($" \t {item.Menge}\t\t {item.Gericht}\t\t{item.Kcal}");
+                    Console.WriteLine($"\t {item.Menge}\t{item.Gericht}\t{item.Kcal} Kcal");
                     summeKcal += item.Kcal;
                 }
-                Console.WriteLine($"\n\tGesamtsumme der Kcal: {summeKcal}");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n\t--------------------------");
+                Console.WriteLine($"\tGesamtsumme der Kcal: {summeKcal}");
                 if (tagesLimitListe.Count > 0)
                 {
                     double tageslimit = tagesLimitListe[0].Tageslimit;
                     double rest = tageslimit - summeKcal;
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\n\t DU DARFST HEUTE NOCH {rest} KCAL KONSUMIEREN\n\n");
+                    Console.WriteLine($"\n\tRESTLICHE KCAL HEUTE: {rest}\n\n");
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
                 else
                 {
-                    Console.WriteLine("\n\tBITTE NOCH TAGESLIMIT ANGEBEN!\n");
+                    Console.WriteLine("\n\n\tBITTE NOCH TAGESLIMIT ANGEBEN!\n");
                 }
 
 
@@ -125,6 +124,8 @@
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\tL(I)MIT FESTLEGEN");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -141,6 +142,12 @@
                         break;
                     case "h":
                         return;
+                    case "i":
+                        LimitFestlegen();
+                        break;
+                    case "d":
+                        DummysTagesliste();
+                        break;
                     default:
                         Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                         break;
@@ -176,6 +183,18 @@
                 Console.ForegroundColor = ConsoleColor.Green;
             }
             Thread.Sleep(1000);
+        }
+        static void DummysTagesliste()
+        {
+            tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Kaffee mit 2 Zucker", Kcal = 35 });
+            tagesListe.Add(new TagesListe { Menge = "97g      ", Gericht = "Brezel             ", Kcal = 310 });
+            tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Landjäger          ", Kcal = 184 });
+            tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Rewe Cappucino     ", Kcal = 142 });
+            tagesListe.Add(new TagesListe { Menge = "1 Portion", Gericht = "Spaghetti Bolognese", Kcal = 900 });
+            tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Gemischter Salat   ", Kcal = 250 });
+            tagesListe.Add(new TagesListe { Menge = "1 Stk    ", Gericht = "Marmorkuchen       ", Kcal = 400 });
+            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Thread.Sleep(500);
         }
 
         //***********************TAGESVERLAUF ENDE***********************

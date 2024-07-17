@@ -286,12 +286,13 @@
                 Console.WriteLine("\t-----GESAMTVERLAUF-----\n");
                 foreach (GesamtverlaufListe item in gesamtverlaufListe)
                 {
-                    Console.WriteLine($" \t {item.DatumGV}\t\t{item.KcalGV}");
+                    Console.WriteLine($" \t {item.DatumGV}\t{item.KcalGV}");
                 }
-                Console.WriteLine("\t(N)EUER EINTRAG");
+                Console.WriteLine("\n\t(N)EUER EINTRAG");
                 //Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(T)AGESVERLAUF\n");
                 Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -305,6 +306,9 @@
                         break;
                     case "h":
                         return;
+                    case "d":
+                        DummysGesamtverlauf();
+                        break;
                     default:
                         Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                         break;
@@ -324,6 +328,41 @@
             Thread.Sleep(500);
         }
 
+        static void DummysGesamtverlauf()
+        {
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_13", KcalGV = 2600 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_14", KcalGV = 3300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_15", KcalGV = 2300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_16", KcalGV = 4500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_17", KcalGV = 2300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_18", KcalGV = 2300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_19", KcalGV = 2300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_20", KcalGV = 3000 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_21", KcalGV = 3300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_22", KcalGV = 3100 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_23", KcalGV = 3500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_24", KcalGV = 2300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_25", KcalGV = 3500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_26", KcalGV = 3300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_27", KcalGV = 2200 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_28", KcalGV = 3500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_29", KcalGV = 4500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_30", KcalGV = 4000 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_01", KcalGV = 2400 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_02", KcalGV = 2000 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_03", KcalGV = 3300 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_04", KcalGV = 2000 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_05", KcalGV = 2400 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_06", KcalGV = 3700 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_07", KcalGV = 4500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_08", KcalGV = 2200 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_09", KcalGV = 2500 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_10", KcalGV = 2700 });
+            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_11", KcalGV = 4500 });
+            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Thread.Sleep(500);
+        }
+
         //***********************GESAMTVERLAUFSEITE ENDE***********************
 
 
@@ -334,13 +373,16 @@
             {
                 Console.Clear();
                 Console.WriteLine("\t-----KALENDERWOCHEN MIT GEWICHT-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (KalenderWochenListe item in kalenderWochenListe)
                 {
-                    Console.WriteLine($" \t {item.Jahr}\t\t {item.KW}\t\t{item.Gewicht}");
+                    Console.WriteLine($"\t{item.Jahr}\t{item.KW}\t{item.Gewicht}KG");
                 }
-                Console.WriteLine("\t(N)EUER EINTRAG");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n\t(N)EUER EINTRAG");
                 //Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -354,6 +396,9 @@
                     //    break;
                     case "h":
                         return;
+                    case "d":
+                        DummysKalenderWochen();
+                        break;
                     default:
                         Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                         break;
@@ -363,14 +408,26 @@
         static void NeuerEintragKalenderwochen()
         {
             KalenderWochenListe item = new KalenderWochenListe();
-            Console.Write("MENGE EINGEBEN");
+            Console.Write("JAHR EINGEBEN");
             item.Jahr = Console.ReadLine();
-            Console.Write("GERICHT EINGEBEN");
+            Console.Write("KALENDERWOCHE EINGEBEN");
             item.KW = Console.ReadLine();
-            Console.Write("KCAL EINGEBEN");
+            Console.Write("GEWICHT EINGEBEN");
             item.Gewicht = Convert.ToDouble(Console.ReadLine());
             kalenderWochenListe.Add(item);
             Console.WriteLine("\n\tDANKE");
+            Thread.Sleep(500);
+        }
+
+        static void DummysKalenderWochen()
+        {
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW24", Gewicht = 118 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW25", Gewicht = 116 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW26", Gewicht = 114 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW27", Gewicht = 114 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW28", Gewicht = 113 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW29", Gewicht = 114 });
+            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
             Thread.Sleep(500);
         }
         //***********************KALENDERWOCHENSEITE ENDE***********************

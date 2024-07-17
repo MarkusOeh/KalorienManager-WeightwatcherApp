@@ -8,10 +8,10 @@ namespace KalorienManager_WeightwatcherApp
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("\t\nWillkommen bei KalorienManager App");
+            Console.WriteLine("\n\tWillkommen bei KalorienManager App");
             Console.ReadKey();
 
-            List<Tagesliste> heute = new List<Tagesliste>(); // Liste deklariert
+            List<Tagesliste> heute = new List<Tagesliste>();
 
             HauptMenü(heute);
 
@@ -107,7 +107,7 @@ namespace KalorienManager_WeightwatcherApp
                     Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n");
                     foreach (Tagesliste item in heute)
                     {
-                        Console.WriteLine($"\t{item.Menge}\t {item.Gericht}\t{item.Kcal}");
+                        Console.WriteLine($" \t {item.Menge}\t\t {item.Gericht}\t\t{item.Kcal}");
                     }
                     Console.WriteLine("\n\n\t SUMME: n KALORIEN");
                     Console.WriteLine("\n\t DU DARFST NOCH n KCAL KONSUMIEREN\n\n");
@@ -141,9 +141,16 @@ namespace KalorienManager_WeightwatcherApp
             static void NeuerEintragTagesverlauf(List<Tagesliste> heute)
             {
                 Console.Clear();
-                heute.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
-                Console.ReadKey();
-                HauptMenü(heute);
+                Console.Write("\n\tBITTE GIB DIE MENGE EIN:\n\t");
+                string menge = Console.ReadLine();
+                Console.Write("\n\tBITTE GIB DAS GERICHT EIN:\n\t");
+                string gericht = Console.ReadLine();
+                Console.Write("\n\tBITTE GIB DIE KALORIENANZAHL EIN:\n\t");
+                double kcal = double.Parse(Console.ReadLine());
+                heute.Add(new Tagesliste(menge, gericht, kcal));
+                Console.WriteLine("\n\tDANKE");
+                Thread.Sleep(500);
+                TagesVerlauf(heute);
             }
             static void LetztenEintragLöschen(List<Tagesliste> heute)
             {

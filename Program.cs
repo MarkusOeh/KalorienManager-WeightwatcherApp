@@ -24,20 +24,6 @@ namespace KalorienManager_WeightwatcherApp
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             //________________________HAUPTMENÜ________________________
             static void HauptMenü(List<Tagesliste> heute)
             {
@@ -99,7 +85,6 @@ namespace KalorienManager_WeightwatcherApp
             //________________________TAGESVERLAUF________________________
             static void TagesVerlauf(List<Tagesliste> heute)
             {
-
                 while (true)
                 {
                     Console.Clear();
@@ -109,7 +94,13 @@ namespace KalorienManager_WeightwatcherApp
                     {
                         Console.WriteLine($" \t {item.Menge}\t\t {item.Gericht}\t\t{item.Kcal}");
                     }
-                    Console.WriteLine("\n\n\t SUMME: n KALORIEN");
+                    static double SummeBerechnen(List<Tagesliste> heute)
+                    {
+                        return heute.Sum(item => item.Kcal);
+                    }
+                    double summeheute = SummeBerechnen(heute);
+
+                    Console.WriteLine($"\n\n\t SUMME: {summeheute} KALORIEN");
                     Console.WriteLine("\n\t DU DARFST NOCH n KCAL KONSUMIEREN\n\n");
                     Console.WriteLine("\t (N)EUER EINTRAG");
                     Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");

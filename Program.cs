@@ -89,7 +89,9 @@ namespace KalorienManager_WeightwatcherApp
                 {
                     Console.Clear();
                     Console.WriteLine("\t-----TAGESVERLAUF-----\n");
-                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n");
+                    double limit = 3000;
+                    Console.WriteLine($"\n\t DAS LIMIT IST {limit}kcal\n\n");
+                    Console.WriteLine("\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n");
                     foreach (Tagesliste item in heute)
                     {
                         Console.WriteLine($" \t {item.Menge}\t\t {item.Gericht}\t\t{item.Kcal}");
@@ -98,10 +100,13 @@ namespace KalorienManager_WeightwatcherApp
                     {
                         return heute.Sum(item => item.Kcal);
                     }
+                    Console.WriteLine("\n\n\n\t ----------------------------");
                     double summeheute = SummeBerechnen(heute);
+                    Console.WriteLine($"\t SUMME: {summeheute} KALORIEN");
 
-                    Console.WriteLine($"\n\n\t SUMME: {summeheute} KALORIEN");
-                    Console.WriteLine("\n\t DU DARFST NOCH n KCAL KONSUMIEREN\n\n");
+                    double rest = limit - summeheute;
+                    Console.WriteLine($"\n\t DU DARFST NOCH {rest} KCAL KONSUMIEREN\n\n");
+
                     Console.WriteLine("\t (N)EUER EINTRAG");
                     Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
                     Console.WriteLine("\t (Z)U VORLAGENLISTE SPRINGEN");

@@ -102,10 +102,12 @@ namespace KalorienManager_WeightwatcherApp
                     }
                     Console.WriteLine("\n\n\n\t ----------------------------");
                     double summeheute = SummeBerechnen(heute);
-                    Console.WriteLine($"\t SUMME: {summeheute} KALORIEN");
+                    Console.WriteLine($"\t SUMME: {summeheute} KALORIEN\n");
 
                     double rest = limit - summeheute;
-                    Console.WriteLine($"\n\t DU DARFST NOCH {rest} KCAL KONSUMIEREN\n\n");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"\n\t DU DARFST HEUTE NOCH {rest} KCAL KONSUMIEREN\n\n");
+                    Console.ForegroundColor = ConsoleColor.Green;
 
                     Console.WriteLine("\t (N)EUER EINTRAG");
                     Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");

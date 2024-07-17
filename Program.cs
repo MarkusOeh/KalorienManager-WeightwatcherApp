@@ -10,8 +10,10 @@ namespace KalorienManager_WeightwatcherApp
 
             Console.WriteLine("\t\nWillkommen bei KalorienManager App");
             Console.ReadKey();
-            List<Tagesliste> tag1 = new List<Tagesliste>();
-            HauptMenü(tag1);
+
+            List<Tagesliste> heute = new List<Tagesliste>(); // Liste deklariert
+
+            HauptMenü(heute);
 
 
 
@@ -22,23 +24,6 @@ namespace KalorienManager_WeightwatcherApp
 
 
 
-
-
-
-
-
-            //________________________LISTEN DEKLARIEREN________________________
-
-            //***********************LISTEN DEKLARIEREN ENDE***********************
-
-            foreach (Tagesliste item in tag1)
-            {
-                Console.WriteLine(item);
-            }
-
-            tag1.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
-            tag1.Add(new Tagesliste("150g", "Caesar Salad", 200));
-            tag1.Add(new Tagesliste("100g", "Schokoladenkuchen", 350));
 
 
 
@@ -54,7 +39,7 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________HAUPTMENÜ________________________
-            static void HauptMenü(List<Tagesliste> list)
+            static void HauptMenü(List<Tagesliste> heute)
             {
                 while (true)
                 {
@@ -66,28 +51,27 @@ namespace KalorienManager_WeightwatcherApp
                     Console.WriteLine("\t(K)ALENDERWOCHEN\n");
                     Console.WriteLine("\tT(U)TORIAL\n");
                     Console.WriteLine("\n\t(L)IMIT FESTLEGEN");
-                    Tagesliste.tag
                     string auswahl = Console.ReadLine().ToLower().Trim();
 
                     switch (auswahl)
                     {
                         case "t":
-                            TagesVerlauf(list);
+                            TagesVerlauf(heute);
                             break;
                         case "v":
-                            VorlagenListe();
+                            VorlagenListe(heute);
                             break;
                         case "g":
-                            GesamtVerlauf();
+                            GesamtVerlauf(heute);
                             break;
                         case "k":
-                            KalenderWochen();
+                            KalenderWochen(heute);
                             break;
                         case "u":
-                            TutorialSeite();
+                            TutorialSeite(heute);
                             break;
                         case "l":
-                            LimitFestlegen();
+                            LimitFestlegen(heute);
                             break;
                         default:
                             Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
@@ -113,19 +97,16 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________TAGESVERLAUF________________________
-            static void TagesVerlauf(List<Tagesliste> list)
+            static void TagesVerlauf(List<Tagesliste> heute)
             {
 
                 while (true)
                 {
                     Console.Clear();
                     Console.WriteLine("\t-----TAGESVERLAUF-----\n");
-                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL");
-                    Console.WriteLine("\t 200g\t\tTesteintrag\t\t500");
-                    Console.WriteLine("\t 1Stk\t\tTestkuchen\t\t600");
-                    Console.WriteLine("\t 1 Portion\t\tTestessen\t\t1000");
-                    Console.WriteLine("\n\n\t SUMME: XXX KALORIEN");
-                    Console.WriteLine("\n\t DU DARFST NOCH SUMME minus TAGESLIMIT KONSUMIEREN\n\n");
+                    Console.WriteLine("\n\n\t MENGE\t\tNAHRUNGSMITTEL\t\tKCAL\n\n");
+                    Console.WriteLine("\n\n\t SUMME: n KALORIEN");
+                    Console.WriteLine("\n\t DU DARFST NOCH n KCAL KONSUMIEREN\n\n");
                     Console.WriteLine("\t (N)EUER EINTRAG");
                     Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
                     Console.WriteLine("\t (Z)U VORLAGENLISTE SPRINGEN");
@@ -136,16 +117,16 @@ namespace KalorienManager_WeightwatcherApp
                     switch (auswahl)
                     {
                         case "n":
-                            NeuerEintragTagesverlauf();
+                            NeuerEintragTagesverlauf(heute);
                             break;
                         case "l":
-                            LetztenEintragLöschen();
+                            LetztenEintragLöschen(heute);
                             break;
                         case "z":
-                            ZuVorlagenListeSpringen();
+                            ZuVorlagenListeSpringen(heute);
                             break;
                         case "h":
-                            HauptMenü();
+                            HauptMenü(heute);
                             break;
                         default:
                             Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
@@ -153,26 +134,26 @@ namespace KalorienManager_WeightwatcherApp
                     }
                 }
             }
-            static void NeuerEintragTagesverlauf(List<Tagesliste> list)
+            static void NeuerEintragTagesverlauf(List<Tagesliste> heute)
             {
                 Console.Clear();
-                list.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
+                heute.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
                 Console.ReadKey();
-                HauptMenü();
+                HauptMenü(heute);
             }
-            static void LetztenEintragLöschen()
+            static void LetztenEintragLöschen(List<Tagesliste> heute)
             {
                 Console.Clear();
                 Console.WriteLine("\n\tTEST EINTRAG LÖSCHEN BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
                 Console.ReadKey();
-                HauptMenü();
+                HauptMenü(heute);
             }
-            static void ZuVorlagenListeSpringen()
+            static void ZuVorlagenListeSpringen(List<Tagesliste> heute)
             {
                 Console.Clear();
                 Console.WriteLine("\n\tTEST VORLAGENLISTE BESTANDEN. JETZT ZU VORLAGEN SPRINGEN");
                 Console.ReadKey();
-                VorlagenListe();
+                VorlagenListe(heute);
             }
             //***********************TAGESVERLAUF ENDE***********************
 
@@ -192,7 +173,7 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________VORLAGENSEITE________________________
-            static void VorlagenListe()
+            static void VorlagenListe(List<Tagesliste> heute)
             {
                 while (true)
                 {
@@ -208,16 +189,16 @@ namespace KalorienManager_WeightwatcherApp
                     switch (auswahl)
                     {
                         case "n":
-                            NeueVorlageEintragen();
+                            NeueVorlageEintragen(heute);
                             break;
                         case "l":
-                            EintragLöschen();
+                            EintragLöschen(heute);
                             break;
                         case "z":
-                            TagesVerlauf();
+                            TagesVerlauf(heute);
                             break;
                         case "h":
-                            HauptMenü();
+                            HauptMenü(heute);
                             break;
                         default:
                             Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
@@ -225,19 +206,19 @@ namespace KalorienManager_WeightwatcherApp
                     }
                 }
             }
-            static void NeueVorlageEintragen()
+            static void NeueVorlageEintragen(List<Tagesliste> heute)
             {
                 Console.Clear();
                 Console.WriteLine("\n\tTEST NeueVorlageEintragen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
                 Console.ReadKey();
-                VorlagenListe();
+                VorlagenListe(heute);
             }
-            static void EintragLöschen()
+            static void EintragLöschen(List<Tagesliste> heute)
             {
                 Console.Clear();
                 Console.WriteLine("\n\tTEST EintragLöschen BESTANDEN. ZURÜCK ZU VORLAGENLISTE");
                 Console.ReadKey();
-                VorlagenListe();
+                VorlagenListe(heute);
             }
             //***********************VORLAGENSEITE ENDE***********************
 
@@ -257,14 +238,14 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________GESAMTVERLAUF________________________
-            static void GesamtVerlauf()
+            static void GesamtVerlauf(List<Tagesliste> heute)
             {
                 while (true)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\t-----GESAMTVERLAUF TESTSEITE-----\n");
                     Console.ReadKey();
-                    HauptMenü();
+                    HauptMenü(heute);
                 }
             }
             //***********************GESAMTVERLAUF ENDE***********************
@@ -285,14 +266,14 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________KALENDERWOCHEN________________________
-            static void KalenderWochen()
+            static void KalenderWochen(List<Tagesliste> heute)
             {
                 while (true)
                 {
                     Console.Clear();
                     Console.WriteLine("\n\tKALENDERWOCHEN TESTSEITE");
                     Console.ReadKey();
-                    HauptMenü();
+                    HauptMenü(heute);
                 }
             }
             //***********************KALENDERWOCHEN ENDE***********************
@@ -313,7 +294,7 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________TUTORIAL________________________
-            static void TutorialSeite()
+            static void TutorialSeite(List<Tagesliste> heute)
             {
                 while (true)
                 {
@@ -341,7 +322,7 @@ namespace KalorienManager_WeightwatcherApp
 
                     Console.WriteLine("DRÜCKE EINE TASTE ZURÜCK ZUM HAUPTMENÜ");
                     Console.ReadKey();
-                    HauptMenü();
+                    HauptMenü(heute);
                 }
             }
             //***********************TUTORIAL ENDE***********************
@@ -367,7 +348,7 @@ namespace KalorienManager_WeightwatcherApp
 
 
             //________________________LIMIT FESTLEGEN________________________
-            static void LimitFestlegen()
+            static void LimitFestlegen(List<Tagesliste> heute)
             {
                 double tageslimit;
                 while (true)
@@ -380,7 +361,7 @@ namespace KalorienManager_WeightwatcherApp
                     {
                         Console.WriteLine($"\n\tDein Tageslimit an Kalorien ist: {tageslimit}");
                         Console.ReadKey();
-                        HauptMenü();
+                        HauptMenü(heute);
                         break;
                     }
                     else

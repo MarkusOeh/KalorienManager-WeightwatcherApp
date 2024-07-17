@@ -8,7 +8,7 @@ namespace KalorienManager_WeightwatcherApp
 {
     public class Tagesliste
     {
-        public static List<Tagesliste> tag;
+        public static List<Tagesliste> wasistdashier;
         public string Menge { get; set; }
         public string Gericht { get; set; }
         public double Kcal { get; set; }

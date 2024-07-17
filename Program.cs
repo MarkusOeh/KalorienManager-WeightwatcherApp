@@ -209,14 +209,17 @@
             {
                 Console.Clear();
                 Console.WriteLine("\t-----Vorlagenseite-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (VorlagenListe item in vorlagenListe)
                 {
                     Console.WriteLine($" \t {item.VorlageEinheit}\t\t {item.GerichtVorlage}\t\t{item.KcalVorlage}");
                 }
-                Console.WriteLine("\t(N)EUER EINTRAG");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(T)AGESVERLAUF\n");
                 Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -233,6 +236,9 @@
                         break;
                     case "h":
                         return;
+                    case "d":
+                        DummysVorlagenSeite();
+                        break;
                     default:
                         Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
                         break;
@@ -270,6 +276,17 @@
                 Console.ForegroundColor = ConsoleColor.Green;
             }
             Thread.Sleep(1000);
+        }
+
+        static void DummysVorlagenSeite()
+        {
+            vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "1x       ", GerichtVorlage = "Pizza Aldi                 ", KcalVorlage = 1023 });
+            vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "1 Portion", GerichtVorlage = "Zucchini Auflauf           ", KcalVorlage = 973 });
+            vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "100g     ", GerichtVorlage = "Fleischküchle selbstgemacht", KcalVorlage = 209 });
+            vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "100g     ", GerichtVorlage = "Tomaten-Thunfisch Salat    ", KcalVorlage = 70 });
+            vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "1x       ", GerichtVorlage = "Big King XXL Burger King   ", KcalVorlage = 973 });
+            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Thread.Sleep(500);
         }
         //***********************VORLAGENSEITE ENDE***********************
 

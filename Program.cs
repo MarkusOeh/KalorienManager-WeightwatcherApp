@@ -1,4 +1,6 @@
-﻿namespace KalorienManager_WeightwatcherApp
+﻿using System.Collections.Generic;
+
+namespace KalorienManager_WeightwatcherApp
 {
     internal class Program
     {
@@ -8,8 +10,8 @@
 
             Console.WriteLine("\t\nWillkommen bei KalorienManager App");
             Console.ReadKey();
-
-            HauptMenü();
+            List<Tagesliste> tag1 = new List<Tagesliste>();
+            HauptMenü(tag1);
 
 
 
@@ -29,6 +31,14 @@
 
             //***********************LISTEN DEKLARIEREN ENDE***********************
 
+            foreach (Tagesliste item in tag1)
+            {
+                Console.WriteLine(item);
+            }
+
+            tag1.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
+            tag1.Add(new Tagesliste("150g", "Caesar Salad", 200));
+            tag1.Add(new Tagesliste("100g", "Schokoladenkuchen", 350));
 
 
 
@@ -44,7 +54,7 @@
 
 
             //________________________HAUPTMENÜ________________________
-            static void HauptMenü()
+            static void HauptMenü(List<Tagesliste> list)
             {
                 while (true)
                 {
@@ -56,12 +66,13 @@
                     Console.WriteLine("\t(K)ALENDERWOCHEN\n");
                     Console.WriteLine("\tT(U)TORIAL\n");
                     Console.WriteLine("\n\t(L)IMIT FESTLEGEN");
+                    Tagesliste.tag
                     string auswahl = Console.ReadLine().ToLower().Trim();
 
                     switch (auswahl)
                     {
                         case "t":
-                            TagesVerlauf();
+                            TagesVerlauf(list);
                             break;
                         case "v":
                             VorlagenListe();
@@ -102,8 +113,9 @@
 
 
             //________________________TAGESVERLAUF________________________
-            static void TagesVerlauf()
+            static void TagesVerlauf(List<Tagesliste> list)
             {
+
                 while (true)
                 {
                     Console.Clear();
@@ -141,10 +153,10 @@
                     }
                 }
             }
-            static void NeuerEintragTagesverlauf()
+            static void NeuerEintragTagesverlauf(List<Tagesliste> list)
             {
                 Console.Clear();
-                Console.WriteLine("\n\tTEST NEUER EINTRAG BESTANDEN. ZURÜCK ZU HAUPTMENÜ");
+                list.Add(new Tagesliste("200g", "Spaghetti Bolognese", 450));
                 Console.ReadKey();
                 HauptMenü();
             }

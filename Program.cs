@@ -60,7 +60,7 @@
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(G)ESAMTVERLAUF\n");
                 Console.WriteLine("\t(K)ALENDERWOCHEN\n");
-                Console.WriteLine("\tT(U)TORIAL\n");
+                Console.WriteLine("\tT(U)TORIAL\n\t");
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
                 switch (auswahl)
@@ -81,7 +81,10 @@
                         TutorialSeite();
                         break;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -123,9 +126,9 @@
                 Console.WriteLine("\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
-                Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\tL(I)MIT FESTLEGEN");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN\n\t");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -140,7 +143,7 @@
                     case "v":
                         Vorlagenseite();
                         break;
-                    case "h":
+                    case "z":
                         return;
                     case "i":
                         LimitFestlegen();
@@ -149,7 +152,10 @@
                         DummysTagesliste();
                         break;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -157,28 +163,30 @@
         static void NeuerEintragTagesverlauf()
         {
             TagesListe item = new TagesListe();
-            Console.Write("MENGE EINGEBEN");
+            Console.Write("\tMENGE EINGEBEN\n\t");
             item.Menge = Console.ReadLine();
-            Console.Write("GERICHT EINGEBEN");
+            Console.Write("\tGERICHT EINGEBEN\n\t");
             item.Gericht = Console.ReadLine();
-            Console.Write("KCAL EINGEBEN");
+            Console.Write("\tKCAL EINGEBEN\n\t");
             item.Kcal = Convert.ToDouble(Console.ReadLine());
             tagesListe.Add(item);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
         static void EntferneLetztenEintragTagesverlauf()
         {
-            if (tagesListe.Count > 0)  // Überprüfen, ob die Liste nicht leer ist
+            if (tagesListe.Count > 0)
             {
                 tagesListe.RemoveAt(tagesListe.Count - 1);
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\tWIRD GELÖSCHT");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\tDIE LISTE LEER");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
@@ -193,7 +201,9 @@
             tagesListe.Add(new TagesListe { Menge = "1 Portion", Gericht = "Spaghetti Bolognese", Kcal = 900 });
             tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Gemischter Salat   ", Kcal = 250 });
             tagesListe.Add(new TagesListe { Menge = "1 Stk    ", Gericht = "Marmorkuchen       ", Kcal = 400 });
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
 
@@ -217,9 +227,8 @@
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
-                Console.WriteLine("\t(T)AGESVERLAUF\n");
-                Console.WriteLine("\t(H)AUPTMENÜ");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
+                Console.WriteLine("\t(Z)URÜCK");
+                Console.WriteLine("\t(D)UMMYS IMPORTIEREN\n\t");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -231,16 +240,16 @@
                     case "l":
                         EntferneLetztenEintragVorlagenSeite();
                         break;
-                    case "t":
-                        TagesVerlauf();
-                        break;
-                    case "h":
+                    case "z":
                         return;
                     case "d":
                         DummysVorlagenSeite();
                         break;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -249,14 +258,16 @@
         static void NeuerEintragVorlagenseite()
         {
             VorlagenListe item = new VorlagenListe();
-            Console.Write("PRO 100g? Pro Portion? Pro Stück?");
+            Console.Write("\tPRO 100G? PRO Portion ODER PRO STÜCK?\n\t");
             item.VorlageEinheit = Console.ReadLine();
-            Console.Write("GERICHT EINGEBEN");
+            Console.Write("\tGERICHT EINGEBEN\n\t");
             item.GerichtVorlage = Console.ReadLine();
-            Console.Write("KCAL EINGEBEN");
+            Console.Write("\tKCAL EINGEBEN\n\t");
             item.KcalVorlage = Convert.ToDouble(Console.ReadLine());
             vorlagenListe.Add(item);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
 
@@ -265,13 +276,13 @@
             if (vorlagenListe.Count > 0)  // Überprüfen, ob die Liste nicht leer ist
             {
                 vorlagenListe.RemoveAt(vorlagenListe.Count - 1);
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\tWIRD GELÖSCHT");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\tDIE LISTE IST SCHON LEER");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
@@ -285,7 +296,9 @@
             vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "100g     ", GerichtVorlage = "Fleischküchle selbstgemacht", KcalVorlage = 209 });
             vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "100g     ", GerichtVorlage = "Tomaten-Thunfisch Salat    ", KcalVorlage = 70 });
             vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "1x       ", GerichtVorlage = "Big King XXL Burger King   ", KcalVorlage = 973 });
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
         //***********************VORLAGENSEITE ENDE***********************
@@ -308,7 +321,7 @@
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 //Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(T)AGESVERLAUF\n");
-                Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
@@ -321,13 +334,16 @@
                     case "t":
                         TagesVerlauf();
                         break;
-                    case "h":
+                    case "z":
                         return;
                     case "d":
                         DummysGesamtverlauf();
                         break;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -336,25 +352,19 @@
         static void NeuerEintragGesamtverlauf()
         {
             GesamtverlaufListe item = new GesamtverlaufListe();
-            Console.Write("DATUM? YYYY.MM.DD");
+            Console.Write("\tDATUM? YYYY.MM.DD\n\t");
             item.DatumGV = Console.ReadLine();
-            Console.Write("GESAMT-KCAL DES TAGESEINGEBEN");
+            Console.Write("\tGESAMT-KCAL DES TAGESEINGEBEN\n\t");
             item.KcalGV = Convert.ToDouble(Console.ReadLine());
             gesamtverlaufListe.Add(item);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
 
         static void DummysGesamtverlauf()
         {
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_13", KcalGV = 2600 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_14", KcalGV = 3300 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_15", KcalGV = 2300 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_16", KcalGV = 4500 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_17", KcalGV = 2300 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_18", KcalGV = 2300 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_19", KcalGV = 2300 });
-            gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_20", KcalGV = 3000 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_21", KcalGV = 3300 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_22", KcalGV = 3100 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_06_23", KcalGV = 3500 });
@@ -376,7 +386,9 @@
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_09", KcalGV = 2500 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_10", KcalGV = 2700 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_11", KcalGV = 4500 });
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
 
@@ -398,7 +410,7 @@
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 //Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
-                Console.WriteLine("\t(H)AUPTMENÜ");
+                Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
@@ -411,13 +423,16 @@
                     //case "l":
                     //    LetztenEintragLöschen();
                     //    break;
-                    case "h":
+                    case "z":
                         return;
                     case "d":
                         DummysKalenderWochen();
                         break;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -425,14 +440,16 @@
         static void NeuerEintragKalenderwochen()
         {
             KalenderWochenListe item = new KalenderWochenListe();
-            Console.Write("JAHR EINGEBEN");
+            Console.Write("\tJAHR EINGEBEN\n\t");
             item.Jahr = Console.ReadLine();
-            Console.Write("KALENDERWOCHE EINGEBEN");
+            Console.Write("\t\tKALENDERWOCHE EINGEBEN\n\t");
             item.KW = Console.ReadLine();
-            Console.Write("GEWICHT EINGEBEN");
+            Console.Write("GEWICHT EINGEBEN\n\t");
             item.Gewicht = Convert.ToDouble(Console.ReadLine());
             kalenderWochenListe.Add(item);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
 
@@ -444,7 +461,9 @@
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW27", Gewicht = 114 });
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW28", Gewicht = 113 });
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW29", Gewicht = 114 });
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
         //***********************KALENDERWOCHENSEITE ENDE***********************
@@ -456,7 +475,7 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t(H)AUPTMENÜ\n\n");
+                Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\n\t-----TUTORIALSEITE-----\n");
                 Console.WriteLine("Willkommen zur WeightWatchers App - Dein Kalorien Manager zum Abnehmen!");
                 Console.WriteLine("");
@@ -477,16 +496,19 @@
                 Console.WriteLine("");
                 Console.WriteLine("Mit der KalorienManager/WeightWatcher App hast du ein mächtiges Werkzeug an deiner Seite, das dir hilft, deine Ziele zu erreichen. Starte noch heute und mach den ersten Schritt zu einem gesünderen und glücklicheren Leben!");
                 Console.WriteLine("");
-                Console.WriteLine("\t(H)AUPTMENÜ\n\n");
+                Console.WriteLine("\t(Z)URÜCK");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
                 switch (auswahl)
                 {
-                    case "h":
+                    case "z":
                         return;
                     default:
-                        Console.WriteLine("\n\tUngültige Auswahl. Bitte erneut versuchen.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\tUNGÜLTIGE AUSWAHL");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Thread.Sleep(400);
                         break;
                 }
             }
@@ -498,10 +520,12 @@
         static void LimitFestlegen()
         {
             TagesLimitListe item = new TagesLimitListe();
-            Console.Write("TAGESLIMIT EINGEBEN");
+            Console.Write("\tTAGESLIMIT EINGEBEN\n\t");
             item.Tageslimit = Convert.ToDouble(Console.ReadLine());
             tagesLimitListe.Add(item);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
+            Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
         //***********************LIMIT FESTLEGEN ENDE***********************

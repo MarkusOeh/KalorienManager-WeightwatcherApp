@@ -321,10 +321,12 @@
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\t--------GESAMTVERLAUF--------\n");
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (GesamtverlaufListe item in gesamtverlaufListe)
                 {
                     Console.WriteLine($" \t {item.DatumGV}\t{item.KcalGV}");
                 }
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");

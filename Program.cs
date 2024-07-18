@@ -55,7 +55,7 @@
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n\tWillkommen bei KalorienManager App\n");
+                Console.WriteLine("\n\tWILLKOMMEN BEI KALORIEN MANAGER / WEIGHTWATCHER APP\n\n");
                 Console.WriteLine("\t(T)AGESVERLAUF\n");
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(G)ESAMTVERLAUF\n");
@@ -218,7 +218,7 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t-----Vorlagenseite-----\n");
+                Console.WriteLine("\t-----VORLAGENSEITE-----\n");
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (VorlagenListe item in vorlagenListe)
                 {
@@ -492,28 +492,17 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\n\t-----TUTORIALSEITE-----\n");
-                Console.WriteLine("Willkommen zur WeightWatchers App - Dein Kalorien Manager zum Abnehmen!");
-                Console.WriteLine("");
-                Console.WriteLine("Du willst Gewicht verlieren? Dann ist diese App genau das Richtige für dich! \nMit dem Kalorien Manager kannst du dein Ziel erreichen, indem du deine Ernährung genau im Blick behältst und Schritt für Schritt abnimmst. Folge den Anweisungen und du wirst erfolgreich sein.");
-                Console.WriteLine("");
-                Console.WriteLine("So funktioniert's:");
-                Console.WriteLine("1. Kalorienaufnahme verstehen \nUm Gewicht zu verlieren, musst du weniger Kalorien zu dir nehmen, als du verbrauchst. Dies nennt man ein Kaloriendefizit.");
-                Console.WriteLine("");
-                Console.WriteLine("2. Essen abwiegen und protokollieren \nAuf allen Lebensmitteln stehen hinten drauf die enthaltenen Kcal pro 100g. Wiege dein Essen ab und multipliziere mit den angegebenen Kcal/100g. Trage die Kalorien in die App ein. So behältst du den Überblick und stellst sicher, dass du unter deinem Kalorienlimit bleibst.");
-                Console.WriteLine("");
-                Console.WriteLine("3. Zwei Wochen normal essen \nIss zwei Wochen lang ganz normal wie immer und trage alle deine Mahlzeiten in die App ein. So ermittelst du die Kalorien die dein Körper täglich verbraucht");
-                Console.WriteLine("");
-                Console.WriteLine("4. Kalorienziel festlegen \nNachdem du deinen täglichen Kalorienverbrauch ermittelt hast, ziehe 500 kcal davon ab. Das ist dein tägliches Kalorienziel, um effektiv abzunehmen.");
-                Console.WriteLine("");
-                Console.WriteLine("Hintergrundwissen: \n 1 kg menschliches Körperfett enthält 7000 kcal \nUm 1 kg Körperfett zu verlieren, musst du insgesamt 7000 kcal einsparen. Mit einem täglichen Defizit von 500 kcal hast du das in 2 Wochen erreicht");
-                Console.WriteLine("");
-                Console.WriteLine("Tipps für den Erfolg: \n Bewegung integrieren \nUnterstütze deinen Abnehmprozess mit regelmäßiger Bewegung. Das erhöht deinen Kalorienverbrauch und verbessert dein Wohlbefinden.");
-                Console.WriteLine("");
-                Console.WriteLine("Mit der KalorienManager/WeightWatcher App hast du ein mächtiges Werkzeug an deiner Seite, das dir hilft, deine Ziele zu erreichen. Starte noch heute und mach den ersten Schritt zu einem gesünderen und glücklicheren Leben!");
-                Console.WriteLine("");
-                Console.WriteLine("\t(Z)URÜCK");
+                Console.WriteLine("\n\t 1 Kilogramm Körperfett hat 7000 Kcal");
+                Console.WriteLine("\t Wenn wir jeden Tag 500 Kcal weniger essen");
+                Console.WriteLine("\t können wir in 14 Tagen 1KG Gewicht verlieren");
+
+                Console.WriteLine("\n\t Du brauchst eine Küchenwaage um deine Mahzlzeiten");
+                Console.WriteLine("\t zu wiegen und die Kcal zu berechnen");
+                Console.WriteLine("\t Iss 2 Wochen ganz normal und schaue was dein Körper verbraucht");
+                Console.WriteLine("\t Danach ziehst du davon 500 Kcal ab und isst jeden Tag weniger");
+
+                Console.WriteLine("\n\n\t(Z)URÜCK");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 

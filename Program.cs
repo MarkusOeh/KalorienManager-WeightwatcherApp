@@ -434,7 +434,7 @@
                 }
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
-                //Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
+                Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
@@ -444,9 +444,9 @@
                     case "n":
                         NeuerEintragKalenderwochen();
                         break;
-                    //case "l":
-                    //    LetztenEintragLöschen();
-                    //    break;
+                    case "l":
+                        EntferneLetztenEintragKalenderwochen();
+                        break;
                     case "z":
                         return;
                     case "d":
@@ -474,6 +474,24 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
             Console.ForegroundColor = ConsoleColor.Green;
+            Thread.Sleep(500);
+        }
+
+        static void EntferneLetztenEintragKalenderwochen()
+        {
+            if (kalenderWochenListe.Count > 0)
+            {
+                kalenderWochenListe.RemoveAt(kalenderWochenListe.Count - 1);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\tWIRD GELÖSCHT");
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\tDIE LISTE IST SCHON LEER");
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
             Thread.Sleep(500);
         }
 

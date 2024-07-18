@@ -190,7 +190,7 @@
                 Console.WriteLine("\n\tDIE LISTE LEER");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
         static void DummysTagesliste()
         {
@@ -273,7 +273,7 @@
 
         static void EntferneLetztenEintragVorlagenSeite()
         {
-            if (vorlagenListe.Count > 0)  // Überprüfen, ob die Liste nicht leer ist
+            if (vorlagenListe.Count > 0)
             {
                 vorlagenListe.RemoveAt(vorlagenListe.Count - 1);
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -286,7 +286,7 @@
                 Console.WriteLine("\n\tDIE LISTE IST SCHON LEER");
                 Console.ForegroundColor = ConsoleColor.Green;
             }
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
         static void DummysVorlagenSeite()
@@ -319,8 +319,7 @@
                     Console.WriteLine($" \t {item.DatumGV}\t{item.KcalGV}");
                 }
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
-                //Console.WriteLine("\t (L)ETZTEN EINTRAG LÖSCHEN");
-                Console.WriteLine("\t(T)AGESVERLAUF\n");
+                Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
@@ -331,8 +330,8 @@
                     case "n":
                         NeuerEintragGesamtverlauf();
                         break;
-                    case "t":
-                        TagesVerlauf();
+                    case "l":
+                        EntferneLetztenEintragGesamtverlauf();
                         break;
                     case "z":
                         return;
@@ -360,6 +359,24 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDANKE");
             Console.ForegroundColor = ConsoleColor.Green;
+            Thread.Sleep(500);
+        }
+
+        static void EntferneLetztenEintragGesamtverlauf()
+        {
+            if (gesamtverlaufListe.Count > 0)
+            {
+                gesamtverlaufListe.RemoveAt(gesamtverlaufListe.Count - 1);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\tWIRD GELÖSCHT");
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\tDIE LISTE IST SCHON LEER");
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
             Thread.Sleep(500);
         }
 

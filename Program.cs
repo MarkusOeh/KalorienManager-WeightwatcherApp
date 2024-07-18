@@ -131,7 +131,6 @@
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\tL(I)MIT FESTLEGEN");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN\n\t");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -233,7 +232,6 @@
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN\n\t");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -330,7 +328,6 @@
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -439,7 +436,6 @@
                 Console.WriteLine("\n\t(N)EUER EINTRAG");
                 //Console.WriteLine("\t(L)ETZTEN EINTRAG LÖSCHEN");
                 Console.WriteLine("\t(Z)URÜCK");
-                Console.WriteLine("\t(D)UMMYS IMPORTIEREN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 

@@ -54,8 +54,9 @@
             while (true)
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\tWILLKOMMEN BEI KALORIEN MANAGER / WEIGHTWATCHER APP\n\n");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\t(T)AGESVERLAUF\n");
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(G)ESAMTVERLAUF\n");
@@ -98,7 +99,9 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t-----TAGESVERLAUF-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\t--------TAGESVERLAUF--------\n");
+                Console.ForegroundColor = ConsoleColor.Green;
                 double summeKcal = 0;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (TagesListe item in tagesListe)
@@ -218,7 +221,9 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t-----VORLAGENSEITE-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\t--------VORLAGENSEITE--------\n");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (VorlagenListe item in vorlagenListe)
                 {
@@ -313,7 +318,9 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t-----GESAMTVERLAUF-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\t--------GESAMTVERLAUF--------\n");
+                Console.ForegroundColor = ConsoleColor.Green;
                 foreach (GesamtverlaufListe item in gesamtverlaufListe)
                 {
                     Console.WriteLine($" \t {item.DatumGV}\t{item.KcalGV}");
@@ -418,7 +425,9 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\t-----KALENDERWOCHEN MIT GEWICHT-----\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\t--------KALENDERWOCHEN MIT GEWICHT--------\n");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (KalenderWochenListe item in kalenderWochenListe)
                 {
@@ -492,15 +501,17 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\n\t-----TUTORIALSEITE-----\n");
-                Console.WriteLine("\n\t 1 Kilogramm Körperfett hat 7000 Kcal");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\t--------TUTORIALSEITE--------\n");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n\t 1 Kilogramm Körperfett hat 7000 Kcal.");
                 Console.WriteLine("\t Wenn wir jeden Tag 500 Kcal weniger essen");
-                Console.WriteLine("\t können wir in 14 Tagen 1KG Gewicht verlieren");
+                Console.WriteLine("\t können wir in 14 Tagen 1KG Gewicht verlieren.");
 
-                Console.WriteLine("\n\t Du brauchst eine Küchenwaage um deine Mahzlzeiten");
-                Console.WriteLine("\t zu wiegen und die Kcal zu berechnen");
-                Console.WriteLine("\t Iss 2 Wochen ganz normal und schaue was dein Körper verbraucht");
-                Console.WriteLine("\t Danach ziehst du davon 500 Kcal ab und isst jeden Tag weniger");
+                Console.WriteLine("\n\t Du brauchst eine Küchenwaage um deine Mahlzeiten");
+                Console.WriteLine("\t zu wiegen und die Kcal zu berechnen.");
+                Console.WriteLine("\t Iss 2 Wochen ganz normal und schaue was dein Körper verbraucht.");
+                Console.WriteLine("\t Danach ziehst du davon 500 Kcal ab und isst jeden Tag weniger.");
 
                 Console.WriteLine("\n\n\t(Z)URÜCK");
 

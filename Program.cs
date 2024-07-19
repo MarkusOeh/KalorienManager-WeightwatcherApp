@@ -523,8 +523,8 @@
                 Console.WriteLine("\n\t--------TUTORIALSEITE--------\n");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n\t 1 Kilogramm Körperfett hat 7000 Kcal.");
-                Console.WriteLine("\t Wenn wir jeden Tag 500 Kcal weniger essen");
-                Console.WriteLine("\t können wir in 14 Tagen 1KG Gewicht verlieren.");
+                Console.WriteLine("\t Wenn wir jeden Tag 500 Kcal weniger essen können wir in ");
+                Console.WriteLine("\t 14 Tagen 1KG Gewicht verlieren (14 x 500 = 7000Kcal).");
 
                 Console.WriteLine("\n\t Du brauchst eine Küchenwaage um deine Mahlzeiten");
                 Console.WriteLine("\t zu wiegen und die Kcal zu berechnen.");

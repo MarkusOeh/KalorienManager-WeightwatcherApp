@@ -131,6 +131,7 @@
                 Console.WriteLine("\t(V)ORLAGENSEITE\n");
                 Console.WriteLine("\t(Z)URÜCK");
                 Console.WriteLine("\tL(I)MIT FESTLEGEN");
+                Console.WriteLine("\t(T)AG ABSPEICHERN");
 
                 string auswahl = Console.ReadLine().ToLower().Trim();
 
@@ -204,7 +205,7 @@
             tagesListe.Add(new TagesListe { Menge = "1x       ", Gericht = "Gemischter Salat   ", Kcal = 250 });
             tagesListe.Add(new TagesListe { Menge = "1 Stk    ", Gericht = "Marmorkuchen       ", Kcal = 400 });
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.WriteLine("\n\tDUMMYS HINZUFÜGEN");
             Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
@@ -300,7 +301,7 @@
             vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "100g     ", GerichtVorlage = "Tomaten-Thunfisch Salat    ", KcalVorlage = 70 });
             vorlagenListe.Add(new VorlagenListe { VorlageEinheit = "1x       ", GerichtVorlage = "Big King XXL Burger King   ", KcalVorlage = 973 });
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.WriteLine("\n\tDUMMYS HINZUFÜGEN");
             Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
@@ -319,6 +320,7 @@
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\t--------GESAMTVERLAUF--------\n");
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\t TAG            KCAL        NOTIZ\n");
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (GesamtverlaufListe item in gesamtverlaufListe)
                 {
@@ -410,7 +412,7 @@
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_10", KcalGV = 2700 });
             gesamtverlaufListe.Add(new GesamtverlaufListe { DatumGV = "2024_07_11", KcalGV = 4500 });
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.WriteLine("\n\tDUMMYS HINZUFÜGEN");
             Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }
@@ -504,7 +506,7 @@
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW28", Gewicht = 113 });
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW29", Gewicht = 114 });
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n\tDUMMYS HINZUGEFÜGT");
+            Console.WriteLine("\n\tDUMMYS HINZUFÜGEN");
             Console.ForegroundColor = ConsoleColor.Green;
             Thread.Sleep(500);
         }

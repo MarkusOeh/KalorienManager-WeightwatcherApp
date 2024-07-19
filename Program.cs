@@ -504,7 +504,7 @@
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW26", Gewicht = 114 });
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW27", Gewicht = 114 });
             kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW28", Gewicht = 113 });
-            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW29", Gewicht = 114 });
+            kalenderWochenListe.Add(new KalenderWochenListe { Jahr = "2024", KW = "KW29", Gewicht = 112 });
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\tDUMMYS HINZUFÜGEN");
             Console.ForegroundColor = ConsoleColor.Green;
